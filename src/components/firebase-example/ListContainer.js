@@ -18,7 +18,7 @@ const ListContainer = () => {
 
   const getItem = () => {
     const db = getFirestore()
-    const docRef = doc(db, 'items', 'h7R5Y0ync9BCGi932wvg')
+    const docRef = doc(db, 'items', '93pruhmR8dh346I5lGli')
     getDoc(docRef).then((snapshot) => {
       console.log({ id: snapshot.id, ...snapshot.data() })
     })
