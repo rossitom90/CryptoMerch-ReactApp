@@ -8,9 +8,17 @@ const Loading = () => {
 
 const Item = ({ item }) => {
   return (
-    <div className="m-8">
-      <div>{item.name}</div>
-      <div>Price: {item.price}</div>
+    <div className="card lg:card-side bg-base-100 shadow-xl">
+      <figure>
+        <img src={item.img} alt="Album" />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">{item.name}</h2>
+        <p>Price: {item.price}</p>
+        <div className="card-actions justify-end">
+          <button className="btn btn-primary">Buy Now</button>
+        </div>
+      </div>
     </div>
   )
 }

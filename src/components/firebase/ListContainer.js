@@ -13,12 +13,12 @@ const ListContainer = () => {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    getItemsPricierThan(500)
+    getItemsPricierThan(1500)
   }, [])
 
   const getItem = () => {
     const db = getFirestore()
-    const docRef = doc(db, 'items', '93pruhmR8dh346I5lGli')
+    const docRef = doc(db, 'items', '9d0kI5fpeqpsoZg74bGn')
     getDoc(docRef).then((snapshot) => {
       console.log({ id: snapshot.id, ...snapshot.data() })
     })
@@ -48,7 +48,10 @@ const ListContainer = () => {
   return (
     <div>
       {items.map((i) => (
-        <li key={i.id}>{i.title}</li>
+        <>
+          <div>PRUEBA</div>
+          <li key={i.id}>{i.title}</li>
+        </>
       ))}
     </div>
   )

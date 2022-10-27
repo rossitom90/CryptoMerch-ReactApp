@@ -15,8 +15,10 @@ import { useState } from 'react'
 import { FavProvider } from './context/FavContext'
 import CondicionalContainer from './components/condicional/CondicionalContainer'
 import Cart from './components/shop/Cart'
-import ListContainer from './components/firebase-example/ListContainer'
+import ListContainer from './components/firebase/ListContainer'
 import Order from './components/shop2/Order'
+import Hero from './components/Hero'
+import Footer from './components/Footer'
 
 function App() {
   const [darkmode, setDarkmode] = useState(true)
@@ -38,7 +40,10 @@ function App() {
           <button className="btn" onClick={darkmodeHanlder}>
             darkmode
           </button>
+
           <Routes>
+            <Route path={'/'} element={<Hero />} />
+            <Route path={'/'} element={<Footer />} />
             <Route path={'/'} element={<Clicker />} />
             <Route path={'/firebase'} element={<ListContainer />} />
             <Route path={'/cart'} element={<Cart />} />

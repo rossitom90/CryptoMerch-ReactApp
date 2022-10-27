@@ -24,13 +24,14 @@ const ItemList = () => {
 
   return (
     <>
-      <div>Tienda 2</div>
-      {items.map((i) => (
-        <ItemCard key={i.id} {...i} />
-      ))}
+      <div class="flex flex-wrap space-x-4 space-y-4 justify-center">
+        {items.map((i) => (
+          <ItemCard key={i.id} {...i} />
+        ))}
 
-      <div>
-        <strong>Darkmode: {Darkmode ? 'Activado' : 'Desactivado'}</strong>
+        <div>
+          <strong>Darkmode: {Darkmode ? 'Activado' : 'Desactivado'}</strong>
+        </div>
       </div>
     </>
   )
