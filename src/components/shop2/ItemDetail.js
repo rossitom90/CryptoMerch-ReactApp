@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { products } from './data/products'
+import Clicker from '../Clicker'
 
 const Loading = () => {
-  return <strong className="m-8">loading ...</strong>
+  return <strong className="m-8">Cargando detalles ...</strong>
 }
 
 const Item = ({ item }) => {
@@ -16,7 +17,8 @@ const Item = ({ item }) => {
         <h2 className="card-title">{item.name}</h2>
         <p>Price: {item.price}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+          <Clicker />
+          <button className="btn btn-primary">Agregar al carrito</button>
         </div>
       </div>
     </div>

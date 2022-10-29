@@ -9,7 +9,7 @@ const Clicker = () => {
   const [counter, setCounter] = useState(0)
 
   useEffect(() => {
-    console.log('se montó el componente')
+    console.log('se agregó un item')
   }, [])
 
   //   useEffect( () => {
@@ -29,13 +29,11 @@ const Clicker = () => {
     <div>
       <div className="m-5">{counter}</div>
       <button onClick={clickHandler} className="btn m-5">
-        Click aquí
+        Cantidad de Items
       </button>
       <div>
         <strong>Darkmode: {Darkmode ? 'Activado' : 'Desactivado'}</strong>
       </div>
-
-      <ClicklerExpensive />
     </div>
   )
 }

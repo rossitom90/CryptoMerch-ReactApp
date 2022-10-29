@@ -43,7 +43,6 @@ function App() {
 
           <Routes>
             <Route path={'/'} element={<Hero />} />
-            <Route path={'/'} element={<Footer />} />
             <Route path={'/'} element={<Clicker />} />
             <Route path={'/firebase'} element={<ListContainer />} />
             <Route path={'/cart'} element={<Cart />} />
@@ -56,6 +55,7 @@ function App() {
             <Route path={'/shop/item/:id'} element={<ItemDetail />} />
             <Route path={'*'} element={<Error404 />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </FavProvider>
     </DarkmodeContext.Provider>

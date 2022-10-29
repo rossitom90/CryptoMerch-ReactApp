@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import {
+  doc,
   addDoc,
   collection,
-  doc,
   getFirestore,
   updateDoc,
 } from 'firebase/firestore'
+import swal from 'sweetalert'
 
 export const UserForm = ({ setUser }) => {
   const updateUser = (event) => {
@@ -49,7 +50,7 @@ export const UserForm = ({ setUser }) => {
 
 const Order = () => {
   const [user, setUser] = useState({})
-  const items = ['iPhone', 'Samsung', 'Motorola'] // Vienen de useContext()
+  const items = ['Buzo eth', 'Remera btc', 'Taza crypto']
 
   const putOrder = () => {
     const order = {
@@ -57,21 +58,24 @@ const Order = () => {
       items: items,
       total: 2,
     }
+
     console.log(order)
+
     const db = getFirestore()
     const ordersCollection = collection(db, 'orders')
     addDoc(ordersCollection, order).then(({ id }) => {
       console.log(id)
-      alert(id)
+      swal('Good job!', 'Se levantó la orden', 'success')
     })
   }
 
   const modifyOrder = () => {
     const db = getFirestore()
     const ordersCollection = collection(db, 'orders')
-    const orderDoc = doc(ordersCollection, 'k0aDH7vo3O79Jt8d8rqT')
+    const orderDoc = doc(ordersCollection, 'jHzF34Wz2Tt4KlzHHpmR')
     updateDoc(orderDoc, { total: 10 }).then((res) => {
       console.log(res)
+      swal('Good job!', 'Se modificó la orden', 'success')
     })
   }
 
