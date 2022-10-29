@@ -2,12 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { products } from './data/products'
 import Clicker from '../Clicker'
+import { useFavs } from '../../context/FavContext'
 
 const Loading = () => {
   return <strong className="m-8">Cargando detalles ...</strong>
 }
 
 const Item = ({ item }) => {
+  const [char, setChar] = useState({})
+  const { add, favs } = useFavs()
+
+  const addHandler = () => {
+    add(char.name)
+    console.log(add, favs)
+  }
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl">
       <figure>
@@ -20,6 +28,10 @@ const Item = ({ item }) => {
           <Clicker />
           <button className="btn btn-primary">Agregar al carrito</button>
         </div>
+
+        <button onClick={addHandler} className="btn">
+          Agregar a Favoritos
+        </button>
       </div>
     </div>
   )
